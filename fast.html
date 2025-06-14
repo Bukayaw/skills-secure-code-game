@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+          background-color: aqua;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+        }
+      </style>
+           <script>
+            function deposit() {
+            var depositAmount = document.getElementById("depositAmount").value;
+              if (depositAmount !== "") {
+         
+               alert("Successfully transfer: " + depositAmount + " Birr.");
+               document.getElementById("depositAmount").value = "";
+               } else {
+               alert("Please enter a valid deposit amount.");
+                 }
+                   }
+           </script>  
+</head>
+<body>
+    <img src="image/softd.png" width="800px" height="600px"><br><br><br>
+    <label for="depositAmount" style="font-size: large;">Enter Fee amount:</label>
+    <input type="number" id="depositAmount">
+    <button type="button" onclick="deposit()" style="color: rgb(235, 6, 208); background-color: rgb(170, 241, 178);">Fee</button><br><br>
+    <a href="order.html">Back to Menu</a>
+</body>
+</html>

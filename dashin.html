@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Order</title>
+    <style>
+        body {
+            background-color: aqua;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .top img {
+            width: 700px;
+            height: 400px;
+            margin: 12px;
+        }
+        input, select, button {
+            font-size: large;
+            margin: 10px;
+            padding: 8px;
+        }
+    </style>
+    <script>
+        function calculateFee() {
+            var pricePerPizza = 70;  
+            var quantity = document.getElementById("dashinQuantity").value;
+            var totalFee = pricePerPizza * quantity;
+            
+            document.getElementById("depositAmount").value = totalFee;
+        }
+
+        function deposit() {
+            var depositAmount = document.getElementById("depositAmount").value;
+            if (depositAmount !== "" && depositAmount > 0) {
+                alert("Successfully paid:: " + depositAmount + " Birr. Thank You!");
+                document.getElementById("dashinQuantity").value = "1"; 
+                document.getElementById("depositAmount").value = ""; 
+            } else {
+                alert("Please enter a valid quantity.");
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <div class="top">
+        <img src="image/dashin.png" alt="dashin Image">
+    </div>
+
+    <label for="dashinQuantity" style="font-size: large;">How much do you drink ?:</label>
+    <select id="dashinQuantity" onchange="calculateFee()">
+        <option value="0">0 Dashin</option>
+        <option value="1">1 Dashin</option>
+        <option value="2">2 Dashin</option>
+        <option value="3">3 Dashin</option>
+        <option value="4">4 Dashin</option>
+        <option value="5">5 Dashin</option>
+        <option value="6">6 Dashin</option>
+        <option value="7">7 Dashin</option>
+        <option value="8">8 Dashin</option>
+        <option value="9">9 Dashin</option>
+        <option value="10">10 Dashin</option>
+        <option value="11">11 Dashin</option>
+    </select>
+
+    <br><br>
+
+    <label for="depositAmount" style="font-size: large;">Total Fee (Birr):</label>
+    <input type="number" id="depositAmount" readonly>
+
+    <button type="button" onclick="deposit()" style="color: rgb(235, 6, 208); background-color: rgb(170, 241, 178);">Pay Fee</button>
+
+    <br><br>
+
+    <a href="order.html">Back to Menu</a>
+
+</body>
+</html>

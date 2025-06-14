@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to the Login Page</title>
+    <style>
+        body {
+            background-color: aqua;
+        }
+        .top, input {
+            margin: 35px;
+            text-align: center;
+            padding: 3px;
+            flex-wrap: nowrap;
+            background-attachment: blue;
+            font-size: large;
+            border-radius: 25px;
+            background-color: darkgrey;
+            text-decoration-color: aliceblue;
+        }
+        .error {
+            color: red;
+            font-size: small;
+        }
+    </style>
+</head>
+<body>
+    <div class="top">
+        <form id="loginForm">
+            FullName: <input type="text" id="name" placeholder="Please enter your name" required><br>
+            <div id="nameError" class="error"></div>
+            Password: <input type="password" id="password" placeholder="Please enter your password" required><br>
+            <div id="passwordError" class="error"></div><br>
+            <button id="loginBtn">Login</button>
+            <div id="errorMessages"></div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

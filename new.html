@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hotel Management System</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background: #f9f9f9;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Hotel Management System</h1>
+    <h3>Register</h3>
+    <label for="username">Username:</label>
+    <input type="text" id="username" placeholder="Enter your username"><br><br>
+    <label for="beds">Number of Beds:</label>
+    <input type="number" id="beds" min="1" value="1"><br><br>
+    <label for="food">Food:</label>
+    <select id="food">
+        <option value="0">Select</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select><br><br>
+    <label for="softDrinks">Soft Drinks:</label>
+    <select id="softDrinks">
+        <option value="0">Select</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select><br><br>
+    <label for="alcohol">Alcohol:</label>
+    <select id="alcohol">
+        <option value="0">Select</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select><br><br>
+    <button onclick="calculateTotal()">Calculate Total</button><br><br>
+    <div id="totalCost"></div>
+</div>
+
+<script>
+    function calculateTotal() {
+        const beds = parseInt(document.getElementById('beds').value);
+        const food = parseInt(document.getElementById('food').value);
+        const softDrinks = parseInt(document.getElementById('softDrinks').value);
+        const alcohol = parseInt(document.getElementById('alcohol').value);
+
+        const bedCost = 50 * beds;
+        const foodCost = 10 * food;
+        const softDrinkCost = 2 * softDrinks;
+        const alcoholCost = 5 * alcohol;
+
+        const totalCost = bedCost + foodCost + softDrinkCost + alcoholCost;
+
+        document.getElementById('totalCost').innerHTML = `Total Cost: $${totalCost}`;
+    }
+</script>
+</body>
+</html>

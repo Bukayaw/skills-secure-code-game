@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Meat</title>
+   
+    <style>
+        body {
+            background-color: rosybrown;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .top img {
+            width: 700px;
+            height: 400px;
+            margin: 12px;
+        }
+        input, select, button {
+            font-size: large;
+            margin: 10px;
+            padding: 8px;
+        }
+    </style>
+
+    <script>
+        function calculateFee() {
+            var pricePerMeat = 270;  
+            var quantity = document.getElementById("meatQuantity").value;
+            var totalFee = pricePerMeat * quantity;
+            
+            document.getElementById("depositAmount").value = totalFee;
+        }
+
+        function deposit() {
+            var depositAmount = document.getElementById("depositAmount").value;
+            if (depositAmount !== "" && depositAmount > 0) {
+                alert("Successfully paid: " + depositAmount + " Birr. Thank You!");
+                document.getElementById("meatQuantity").value = "1"; 
+                document.getElementById("depositAmount").value = ""; 
+            } else {
+                alert("Please enter a valid quantity.");
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <div class="top">
+        <img src="image/jpg1.png" alt="Meat Image">
+        <img src="image/jpg1.png" alt="Meat Image">
+    </div>
+
+    <label for="meatQuantity" style="font-size: large;">Select Number of Meats:</label>
+    <select id="meatQuantity" onchange="calculateFee()">
+        <option value="0">0 Meat</option>
+        <option value="1">1 Meat</option>
+        <option value="2">2 Meats</option>
+        <option value="3">3 Meats</option>
+        <option value="4">4 Meats</option>
+        <option value="5">5 Meats</option>
+    </select>
+
+    <br><br>
+    
+    <label for="depositAmount" style="font-size: large;">Total Fee (Birr):</label>
+    <input type="number" id="depositAmount" readonly>
+    
+    <button type="button" onclick="deposit()" style="color: rgb(235, 6, 208); background-color: rgb(170, 241, 178);">Pay Fee</button>
+    
+    <br><br>
+    
+    <a href="order.html">Back to Menu</a> 
+
+</body>
+</html>

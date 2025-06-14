@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .tos, button {
+      text-align: center;
+      background-color: darkgray;
+      margin: 0;
+      padding: 0;
+      font-size: 60px;
+    }
+    .b{
+      background-color: rgb(42, 9, 189);
+      font-size: 50px;
+      height: 50px;
+      padding: 0;
+      margin: 0;
+      padding-bottom: 0;
+      color: white;
+    }
+    .door img{
+      height: 200px;
+      width: 247px;
+      padding-top: 0%;
+    }
+    .door{
+      padding-top: 0%;
+    }
+    p{
+      text-align: center;
+      font-size: 40px;
+    }
+  </style>
+</head>
+<body style="background-color: lch(from color l c h)">
+  <h2 class="b"><marquee> Welcome to the Order Room, please choose what you want? </marquee></h2>
+  <h2 class="b"><marquee style="color:rgb(218, 100, 10); font-size: 50px;">Call to +251 927 583 162</marquee></h2>
+  <div id="content"></div>
+  <div class="tos">
+    <button type="button" onclick="functionOne()" style="color: rgb(235, 6, 208); background-color: rgb(157, 239, 146); width: 300px; height: 300px; border-radius: 15px;">Meat</button>
+    <button type="button" onclick="functionTwo()" style="color: rgb(235, 6, 208); background-color: rgb(106, 241, 87); width: 300px; height: 300px; border-radius: 15px;">Pizza</button>
+    <button type="button" onclick="functionThree()" style="color: rgb(235, 6, 208); background-color: rgb(106, 241, 87); width: 300px; height: 300px; border-radius: 15px;">Burger</button>
+    <button type="button" onclick="functionFour()" style="color: rgb(235, 6, 208); background-color: rgb(106, 241, 87); width: 300px; height: 300px; border-radius: 15px;">Fish</button><br><br>
+    <button type="button" onclick="functionFive()" style="color: rgb(235, 6, 208); background-color: rgb(106, 241, 87); width: 300px; height: 300px; border-radius: 15px;">Draft</button>
+    <button type="button" onclick="functionSix()" style="color: rgb(235, 6, 208); background-color: rgb(106, 241, 87); width: 300px; height: 300px; border-radius: 15px;">Beer</button>
+    <button type="button" onclick="functionSeven()" style="color: rgb(235, 6, 208); background-color: rgb(106, 241, 87); width: 300px; height: 300px; border-radius: 15px;">Soft drink</button>
+    <button type="button" onclick="functionEight()" style="color: rgb(77, 245, 85); background-color: rgb(238, 112, 223); width: 300px; height: 300px; border-radius: 15px;">Other</button>
+   
+  </div>
+   <p>Do You Want to Bedroom ? <a href="bedroom.html">Bedroom</a></p>
+  <div class="door">
+    <img src="image/b1.JPG" >
+    <img src="image/a2.png" >
+    <img src="image/a3.png" >
+    <img src="image/a4.png" >
+    <img src="image/a1.png" >
+    <img src="image/a1.png" >
+  </div>
+
+  <script>
+    function functionOne() {
+      document.getElementById("content").innerHTML = "<span style='font-size: 24px;'> The Cost of Meat is 270 Birr ? <a href='meat.html'>click</a>";
+    }
+
+    function functionTwo() {
+      document.getElementById("content").innerHTML = "<span style='font-size: 24px;'> The Cost of Pizza is 300 Birr for each?  <a href='pizza.html'>click</a>";
+    }
+
+    function functionThree() {
+      document.getElementById("content").innerHTML = "<span style='font-size: 24px;'> The Cost of Burger is 150 Birr ? <a href='m2.html'>click</a>";
+    }
+
+    function functionFour() {
+      document.getElementById("content").innerHTML = "<span style='font-size: 24px;'> The Cost of Fish is 75 Birr ? <a href='fish.html'>click</a>";
+    }
+
+    function functionFive() {
+      document.getElementById("content").innerHTML = "<span style='font-size: 24px;'>The Cost of Draft is 65 Birr ? <a href='draft.html'>click</a>";
+    }
+
+    function functionSix() {
+      document.getElementById("content").innerHTML = "<span style='font-size: 24px;'> The cost of beer is 70 Birr for each " +
+        '<ul style="list-style-type: none">' +
+        '<li><a href="dashin.html">Dashin</a></li>' +
+        '<li><a href="harer.html">Harer</a></li>' +
+        '<li><a href="giorgis.html">Giorgis</a></li>' +
+        '<li><a href="balageru.html">Balageru</a></li>' +
+        '<li><a href="walya.html">Walya</a></li>' +
+        '</ul>';
+    }
+
+    function functionSeven() {
+      document.getElementById("content").innerHTML = "The cost of soft drink is 50 Birr for each." +
+        '<ul style="list-style-type: none">' +
+        '<li> <a href="coca.html">Coca</a> </li>' +
+        '<li><a href="#">Papsi</a></li>' +
+        '<li><a href="#">Fanta</a></li>' +
+        '<li><a href="#">Sprite</a></li>' +
+        '<li><a href="#">Ambo</a></li>' +
+        "</ul>";
+    }
+    function functionEight() {
+      document.getElementById("content").innerHTML = "The cost  is 85 Birr ." +
+        '<ul style="list-style-type: none">' +
+        '<li> <a href="shiro.html">Shiro</a> </li>' +
+        '<li><a href="#">Beaynet</a></li>' +
+        '<li><a href="#">Pasta</a></li>' +
+        '<li><a href="#">Mecorony</a></li>' +
+        '<li><a href="#">Tegabino</a></li>' +
+        "</ul>";
+    }
+  </script>
+</body>
+</html>

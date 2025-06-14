@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Order</title>
+    <style>
+        body {
+            background-color: aqua;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .top img {
+            width: 600px;
+            height: 400px;
+            margin: 12px;
+        }
+        input, select, button {
+            font-size: large;
+            margin: 10px;
+            padding: 8px;
+        }
+    </style>
+    <script>
+        function calculateFee() {
+            var pricePerPizza = 70;  
+            var quantity = document.getElementById("harerQuantity").value;
+            var totalFee = pricePerPizza * quantity;
+            
+            document.getElementById("depositAmount").value = totalFee;
+        }
+
+        function deposit() {
+            var depositAmount = document.getElementById("depositAmount").value;
+            if (depositAmount !== "" && depositAmount > 0) {
+                alert("Successfully paid: " + depositAmount + " Birr. Thank You!");
+                document.getElementById("harerQuantity").value = "1"; 
+                document.getElementById("depositAmount").value = ""; 
+            } else {
+                alert("Please enter a valid quantity.");
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <div class="top">
+        <img src="image/hb.png" alt="harer Image">
+    </div>
+
+    <label for="harerQuantity" style="font-size: large;">How much do you drink ?:</label>
+    <select id="harerQuantity" onchange="calculateFee()">
+        <option value="0">0 Harer</option>
+        <option value="1">1 Harer</option>
+        <option value="2">2 Harer</option>
+        <option value="3">3 Harer</option>
+        <option value="4">4 Harer</option>
+        <option value="5">5 Harer</option>
+        <option value="6">6 Harer</option>
+        <option value="7">7 Harer</option>
+        <option value="8">8 Harer</option>
+        <option value="9">9 Harer</option>
+        <option value="10">10 Harer</option>
+        <option value="11">11 Harer</option>
+    </select>
+
+    <br><br>
+
+    <label for="depositAmount" style="font-size: large;">Total Fee (Birr):</label>
+    <input type="number" id="depositAmount" readonly>
+
+    <button type="button" onclick="deposit()" style="color: rgb(235, 6, 208); background-color: rgb(170, 241, 178);">Pay Fee</button>
+
+    <br><br>
+
+    <a href="order.html">Back to Menu</a>
+
+</body>
+</html>
